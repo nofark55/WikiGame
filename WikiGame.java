@@ -10,7 +10,7 @@ public class WikiGame {
     }
 
     public WikiGame() {
-
+//test
         String startLink = "";  // beginning link, where the program will start
         String endLink = "";    // ending link, where the program is trying to get to
         maxDepth = 1;           // start this at 1 or 2, and if you get it going fast, increase
