@@ -11,8 +11,8 @@ public class WikiGame {
 
     public WikiGame() {
 //test
-        String startLink = "";  // beginning link, where the program will start
-        String endLink = "";    // ending link, where the program is trying to get to
+        String startLink = "https://en.wikipedia.org/wiki/MV_Hondius_hantavirus_outbreak";  // beginning link, where the program will start
+        String endLink = "https://en.wikipedia.org/wiki/Epidemiology";    // ending link, where the program is trying to get to
         maxDepth = 1;           // start this at 1 or 2, and if you get it going fast, increase
 
         if (findLink(startLink, endLink, 0)) {
@@ -30,9 +30,9 @@ public class WikiGame {
         System.out.println("depth is: " + depth + ", link is: https://en.wikipedia.org" + startLink);
 
         // BASE CASE
-        if () {
-
-        } else if () {
+        if (startLink.equals(endLink)) {
+            return true;
+        } else if (!startLink.equals(endLink)) {
 
         }
 
