@@ -8,9 +8,8 @@ public class WikiGame {
     public static void main(String[] args) {
         WikiGame w = new WikiGame();
     }
-
+//f
     public WikiGame() {
-//test
         String startLink = "https://en.wikipedia.org/wiki/MV_Hondius_hantavirus_outbreak";  // beginning link, where the program will start
         String endLink = "https://en.wikipedia.org/wiki/Epidemiology";    // ending link, where the program is trying to get to
         maxDepth = 1;           // start this at 1 or 2, and if you get it going fast, increase
@@ -19,7 +18,7 @@ public class WikiGame {
             System.out.println("found it********************************************************************");
             path.add(startLink);
         } else {
-            System.out.println("did not found it********************************************************************");
+            System.out.println("did not find it********************************************************************");
         }
 
     }
