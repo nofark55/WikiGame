@@ -10,7 +10,6 @@ public class WikiGame {
 
     private int maxDepth;
     private java.util.ArrayList<String> path = new java.util.ArrayList<>();
-
     private HashSet<String> visited = new HashSet<>();
 
     public static void main(String[] args) {
@@ -18,12 +17,14 @@ public class WikiGame {
     }
 
     public WikiGame() {
-        String startLink = "https://en.wikipedia.org/wiki/MV_Hondius_hantavirus_outbreak";
-        String endLink = "https://en.wikipedia.org/wiki/Philosophy";
+        String startLink = "https://en.wikipedia.org/wiki/Milton_Academy";
+        String endLink = "https://en.wikipedia.org/wiki/Car";
         maxDepth = 4;
 
+        // Add the starting link to the path manually if found
         if (findLink(startLink, endLink, 0)) {
             System.out.println("found");
+            System.out.println(" -> " + startLink); // Prints the starting point
             for (String p : path) System.out.println(" -> " + p);
         } else {
             System.out.println("Did not find it within depth " + maxDepth);
@@ -57,10 +58,17 @@ public class WikiGame {
             Matcher m = p.matcher(html);
 
             while (m.find()) {
-                String nextLink = "https://en.wikipedia.org" + m.group(1);
-//f
+                String subPath = m.group(1);
+
+                // CRITICAL FIX: Skip the Main Page entirely
+                if (subPath.equalsIgnoreCase("/wiki/Main_Page")) {
+                    continue;
+                }
+
+                String nextLink = "https://en.wikipedia.org" + subPath;
+
                 if (findLink(nextLink, targetLink, depth + 1)) {
-                    path.addFirst(nextLink);
+                    path.add(0, nextLink); // Standard Java way to insert at the front
                     return true;
                 }
             }
