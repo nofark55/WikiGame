@@ -19,7 +19,8 @@ public class WikiGame {
     public WikiGame() {
         String startLink = "https://en.wikipedia.org/wiki/Milton_Academy";
         String endLink = "https://en.wikipedia.org/wiki/Car";
-        maxDepth = 4;
+        //remember compouding, you can be searching a TON of pages at a depth of 4.
+        maxDepth = 5;
 
         // Add the starting link to the path manually if found
         if (findLink(startLink, endLink, 0)) {
@@ -60,8 +61,7 @@ public class WikiGame {
             while (m.find()) {
                 String subPath = m.group(1);
 
-                // CRITICAL FIX: Skip the Main Page entirely
-                if (subPath.equalsIgnoreCase("/wiki/Main_Page")) {
+                if (subPath.equalsIgnoreCase("/wiki/Main_Page") || subPath.equalsIgnoreCase("/wiki/Geographic_coordinate_system")) {
                     continue;
                 }
 
@@ -74,7 +74,7 @@ public class WikiGame {
             }
 
         } catch (Exception e) {
-            System.out.println("Skip link (Error): " + currentLink);
+            System.out.println("skipped");
         }
 
         return false;
