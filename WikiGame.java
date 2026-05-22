@@ -41,6 +41,7 @@ public class WikiGame {
         System.out.println("Depth " + depth + ": Searching " + currentLink);
 
         try {
+            //
             URL url = new URL(currentLink);
             HttpURLConnection conn = (HttpURLConnection) url.openConnection();
             conn.setRequestMethod("GET");
