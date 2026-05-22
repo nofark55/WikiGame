@@ -15,7 +15,7 @@ public class WikiGame {
     public static void main(String[] args) {
         new WikiGame();
     }
-
+//D
     public WikiGame() {
         String startLink = "https://en.wikipedia.org/wiki/Milton_Academy";
         String endLink = "https://en.wikipedia.org/wiki/Car";
