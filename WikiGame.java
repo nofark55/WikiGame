@@ -5,6 +5,7 @@ import java.net.URL;
 import java.util.HashSet;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.Scanner;
 
 public class WikiGame {
 
@@ -17,8 +18,13 @@ public class WikiGame {
     }
 //D
     public WikiGame() {
-        String startLink = "https://en.wikipedia.org/wiki/Milton_Academy";
-        String endLink = "https://en.wikipedia.org/wiki/Car";
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter first link: ");
+        String firstLink = scanner.nextLine();
+        String startLink = "https://en.wikipedia.org/wiki/" + firstLink;
+        System.out.print("Enter goal link: ");
+        String goalLink = scanner.nextLine();
+        String endLink = "https://en.wikipedia.org/wiki/" + goalLink;
         //remember compouding, you can be searching a TON of pages at a depth of 4.
         maxDepth = 5;
 
