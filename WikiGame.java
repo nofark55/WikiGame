@@ -27,7 +27,7 @@ public class WikiGame {
         String endLink = "https://en.wikipedia.org/wiki/" + goalLink;
         //remember compouding, you can be searching a TON of pages at a depth of 4.
         maxDepth = 5;
-
+//bfs
         // Add the starting link to the path manually if found
         if (findLink(startLink, endLink, 0)) {
             System.out.println("found");
