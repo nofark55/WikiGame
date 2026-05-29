@@ -16,7 +16,7 @@ public class WikiGame {
     public static void main(String[] args) {
         new WikiGame();
     }
-//D
+//Ddfas
     public WikiGame() {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter first link: ");
